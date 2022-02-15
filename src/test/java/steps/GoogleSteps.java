@@ -4,6 +4,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 import pages.GooglePage;
 
 public class GoogleSteps {
@@ -25,7 +26,7 @@ public class GoogleSteps {
 	}
 	@Then("^the results match the criteria$")
 	public void resultsMatched(){
-
+		Assert.assertEquals("Expected text", google.firstResult());
 	}
 
 }
