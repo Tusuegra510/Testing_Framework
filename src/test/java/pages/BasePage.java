@@ -74,4 +74,14 @@ public class BasePage {
 		actions.contextClick(Find(locator));
 	}
 
+	public String getValueFromTable(String locator, int row, int column){
+		String cellINeed = locator+"table/tbody/tr["+row+"]/td["+column+"]";
+		return Find(cellINeed).getText();
+	}
+
+	public void setValueFromGrid(String locator, int row, int column, String stringToSend){
+		String cellToFill = locator+"/table/tbody/tr/["+row+"]/td["+column+"]";
+		Find(cellToFill).sendKeys(stringToSend);
+	}
+
 }
