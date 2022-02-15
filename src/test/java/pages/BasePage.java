@@ -62,17 +62,11 @@ public class BasePage {
 		dropdown.selectByVisibleText(valueToSelect);
 	}
 
-	public void hoverOverElement(String locator){
-		actions.moveToElement(Find(locator));
-	}
+	public void hoverOverElement(String locator){ actions.moveToElement(Find(locator)); }
 
-	public void doubleClick(String locator){
-		actions.doubleClick(Find(locator));
-	}
+	public void doubleClick(String locator){ actions.doubleClick(Find(locator)); }
 
-	public void contextClick(String locator){
-		actions.contextClick(Find(locator));
-	}
+	public void contextClick(String locator){ actions.contextClick(Find(locator)); }
 
 	public String getValueFromTable(String locator, int row, int column){
 		String cellINeed = locator+"table/tbody/tr["+row+"]/td["+column+"]";
@@ -96,8 +90,12 @@ public class BasePage {
 		driver.switchTo().alert().dismiss();
 	}
 
-	public String textFromElement(String locator){
-		return Find(locator).getText();
-	}
+	public String textFromElement(String locator){ return Find(locator).getText(); }
+
+	public boolean elementEnabled(String locator){ return Find(locator).isEnabled(); }
+
+	public boolean elementIsDisplayed(String locator){ return Find(locator).isDisplayed(); }
+
+	public boolean elementIsSelected(String locator){ return Find(locator).isSelected(); }
 
 }

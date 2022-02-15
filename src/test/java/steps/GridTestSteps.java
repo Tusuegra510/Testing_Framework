@@ -17,7 +17,12 @@ public class GridTestSteps {
 	@Then("^I can return the value I wanted$")
 	public void returnValue(){
 		String value = grid.getValueFromGrid(10, 4);
-
 		Assert.assertEquals("r: 9, c: 3", value);
+	}
+
+	@Then("^I can validate the table is displayed$")
+	public void theTableIsThere(){
+		//Assert.assertFalse("Element is there", grid.cellStatus());
+		//Assert.assertTrue("Element is there", grid.cellStatus());
 	}
 }
