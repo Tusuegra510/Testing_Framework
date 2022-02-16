@@ -19,7 +19,13 @@ dependencies {
     testImplementation group: 'io.cucumber', name: 'cucumber-junit', version: '7.2.3'
 }
 
+allprojects {
+    tasks.withType(JavaCompile) {
+        options.deprecation = true
+    }
+}
+
 test {
-    systemProperty "cucumber.options", System.getProperty("cucumber.options")
     useJUnitPlatform()
+    systemProperty "cucumber.options", System.getProperty("cucumber.options")
 }

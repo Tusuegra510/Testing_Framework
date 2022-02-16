@@ -11,7 +11,7 @@ import pages.BasePage;
 		features = "src/test/resources/features",
 		glue = "steps",
 		monochrome = true,
-		tags = "@Grid"
+		tags = "@List"
 )
 
 public class Runner {
