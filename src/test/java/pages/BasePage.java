@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
+import java.util.List;
 
 public class BasePage {
 
@@ -97,5 +98,7 @@ public class BasePage {
 	public boolean elementIsDisplayed(String locator){ return Find(locator).isDisplayed(); }
 
 	public boolean elementIsSelected(String locator){ return Find(locator).isSelected(); }
+
+	public List<WebElement> bringMeAllElements(String locator){ return driver.findElements(By.className(locator)); }
 
 }
