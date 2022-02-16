@@ -4,6 +4,7 @@ import org.openqa.selenium.WebElement;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 public class ListPage extends BasePage{
 
@@ -15,8 +16,14 @@ public class ListPage extends BasePage{
 	public void navigateToListPage(){ navigateTo("https://andreidbr.github.io/JS30/06AjaxTypeAhead/index.html"); }
 
 	public void enterSearchCriteria() throws InterruptedException {
-		Thread.sleep(600);
-		write(searchField, "Washington");
+		try {
+			Thread.sleep(600);
+			write(searchField, "Washington");
+		}catch (NoSuchElementException e){
+			System.out.println("The Web Element Search Field couldn't be found.");
+			e.printStackTrace();
+		}
+
 	}
 
 	public List<String> getAllSearchResults(){
