@@ -17,6 +17,11 @@ dependencies {
     implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.1.2'
     implementation group: 'io.cucumber', name: 'cucumber-java', version: '7.2.3'
     testImplementation group: 'io.cucumber', name: 'cucumber-junit', version: '7.2.3'
+    implementation group: 'com.aventstack', name: 'extentreports-cucumber4-adapter', version: '1.0.7'
+
+    testImplementation 'org.junit.vintage:junit-vintage-engine:5.8.2'
+
+
 }
 
 allprojects {
@@ -28,4 +33,26 @@ allprojects {
 test {
     useJUnitPlatform()
     systemProperty "cucumber.options", System.getProperty("cucumber.options")
+    //systemProperties System.getProperties()
+}
+
+configurations {
+    cucumberRuntime {
+        extendsFrom testImplementation
+    }
+}
+
+task cucumberCli() {
+    dependsOn assemble, testClasses
+    doLast {
+        javaexec {
+            main = "io.cucumber.core.cli.Main"
+            classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
+            args = [
+                    '--plugin', 'pretty',
+                    '--plugin', 'html:target/cucumber-report.html',
+                    '--glue', 'com.baeldung.cucumber',
+                    'src/test/resources/features']
+        }
+    }
 }

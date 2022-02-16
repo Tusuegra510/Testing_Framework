@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="runner.Runner" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-02-16T20:48:33" hostname="DESKTOP-B98HF9R" time="3.844">
+  <properties/>
+  <testcase name="As a Test Engineer, I want to validate that a text is present. #1" classname="runner.Runner" time="2.966"/>
+  <testcase name="As a Test Engineer, I want to validate that a text is present. #2" classname="runner.Runner" time="0.878"/>
+  <system-out><![CDATA[
+@List
+Scenario Outline: As a Test Engineer, I want to validate that a text is present. # src/test/resources/features/ListPageTests.feature:11
+  Given I navigate to the list page                                              # steps.ListSteps.navigateToListPage()
+  When I search Washington in the list                                           # steps.ListSteps.searchTheList(java.lang.String)
+The text is on the list. PASSED.
+  Then I can find Seattle, Washington in the list                                # steps.ListSteps.theCityIsThere(java.lang.String)
+
+@List
+Scenario Outline: As a Test Engineer, I want to validate that a text is present. # src/test/resources/features/ListPageTests.feature:12
+  Given I navigate to the list page                                              # steps.ListSteps.navigateToListPage()
+  When I search Chicago in the list                                              # steps.ListSteps.searchTheList(java.lang.String)
+The text is on the list. PASSED.
+  Then I can find Chicago, Illinois in the list                                  # steps.ListSteps.theCityIsThere(java.lang.String)
+]]></system-out>
+  <system-err><![CDATA[SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Starting ChromeDriver 97.0.4692.71 (adefa7837d02a07a604c1e6eff0b3a09422ab88d-refs/branch-heads/4692@{#1247}) on port 52197
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+[1645044515.221][WARNING]: This version of ChromeDriver has not been tested with Chrome version 98.
+feb. 16, 2022 5:48:35 P. M. org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+feb. 16, 2022 5:48:35 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 98, so returning the closest version found: 97
+feb. 16, 2022 5:48:35 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+INFO: Found CDP implementation for version 98 of 97
+?????????????????????????????????????????????????????????????????????????????????????
+? Share your Cucumber Report with your team at https://reports.cucumber.io          ?
+? Activate publishing with one of the following:                                    ?
+?                                                                                   ?
+? src/test/resources/cucumber.properties:          cucumber.publish.enabled=true    ?
+? src/test/resources/junit-platform.properties:    cucumber.publish.enabled=true    ?
+? Environment variable:                            CUCUMBER_PUBLISH_ENABLED=true    ?
+? JUnit:                                           @CucumberOptions(publish = true) ?
+?                                                                                   ?
+? More information at https://cucumber.io/docs/cucumber/environment-variables/      ?
+?                                                                                   ?
+? Disable this message with one of the following:                                   ?
+?                                                                                   ?
+? src/test/resources/cucumber.properties:          cucumber.publish.quiet=true      ?
+? src/test/resources/junit-platform.properties:    cucumber.publish.quiet=true      ?
+?????????????????????????????????????????????????????????????????????????????????????
+]]></system-err>
+</testsuite>

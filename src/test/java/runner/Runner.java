@@ -10,6 +10,7 @@ import pages.BasePage;
 @CucumberOptions(
 		features = "src/test/resources/features",
 		glue = "steps",
+		plugin = {"pretty", "html:target/cucumber-report.html"},
 		monochrome = true,
 		tags = "@List"
 )
