@@ -10,6 +10,7 @@ import pages.BasePage;
 @CucumberOptions(
 		features = "src/test/resources/features",
 		glue = "steps",
+		monochrome = true,
 		tags = "@Grid"
 )
 
