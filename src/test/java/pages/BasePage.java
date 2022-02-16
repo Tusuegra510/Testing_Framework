@@ -36,6 +36,8 @@ public class BasePage {
 		driver.get(url);
 	}
 
+	public static void closeBrowser(){ driver.quit(); }
+
 	private WebElement Find(String locator){
 		return  wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locator)));
 	}
