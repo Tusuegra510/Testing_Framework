@@ -6,7 +6,7 @@ This type of testing is found at the top of the famous Cohn Pyramid.
 
 image to illustration
 
-![alt text](C:\Users\sebas\Desktop\t.jpg?raw=true)
+![t](https://user-images.githubusercontent.com/63876489/155137314-8d0f0b0d-85f2-4bb0-96b6-65f12b5c1fc8.jpg)
 
 We use:
 - [Cucumber](https://cucumber.io/)
