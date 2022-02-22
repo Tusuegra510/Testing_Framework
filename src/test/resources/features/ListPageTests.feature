@@ -9,4 +9,4 @@ Feature: I can find a city inside a state.
     Examples:
     |state        |city               |
     |Washington   |Seattle, Washington|
-    |Chicago      |Chicago, Illinois  |
+    |Chicago      |Illinois, Chicago  |
